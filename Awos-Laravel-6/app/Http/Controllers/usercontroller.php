@@ -6,15 +6,12 @@ namespace App\Http\Controllers;
  class UserController extends Controllers
  {
      public function index()
-     {
-         $alumnos=[
-            "Mono",
-            "Aylin",
-            "Kuzo",
-         ];
-         return view('alumnos'. [
-             'alumnos' =>$alumnos
-         ]);
+     {       
+            $Alumnos          =   Alumnos::all();
+            return Response::json(  
+                array(
+                        'user'      =>  $Alumnos,
+                ),200);
      }
  }
 ?>

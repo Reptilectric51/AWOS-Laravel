@@ -9,10 +9,6 @@
     <h1>Alumnos:</h1>
 
     
-<ul>
-<?php foreach ($alumno as $alumno);?>
-<li><?php echo $alumno?> </li>
-<?php endforeach; ?>
-</ul>
+
 </body>
 </html>
