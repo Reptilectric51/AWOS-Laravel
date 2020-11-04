@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
  use Illuminate\Http\Request;
+ 
 
  class UserController extends Controllers
  {
      public function index()
      {       
-            $Alumnos          =   Alumnos::all();
+            $alumnos          =   alumnos::all();
             return Response::json(  
                 array(
-                        'user'      =>  $Alumnos,
+                        'user'      =>  $alumnos,
                 ),200);
      }
  }
