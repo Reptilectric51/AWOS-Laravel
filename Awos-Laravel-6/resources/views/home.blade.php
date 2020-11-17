@@ -13,8 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif      
-                    <Holamundovwjs></holamundovwjs>
-                    
+                    <holamundovue></holamundovue>
+                    <example-component></example-component>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        <h3>Mi primer hola mundo en laravel</h3>
+                        I'm an example component.
                     </div>
                 </div>
             </div>
