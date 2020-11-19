@@ -1,23 +1,22 @@
-<template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        <h3>Mi primer hola mundo en laravel</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>
-
 <script>
+import axios from 'axios';
     export default {
+        data (){
+            return{
+                pokemons: []
+            }
+        },
         mounted() {
-            console.log('Component mounted.')
+            this.getPokemons();
+            console.log('Carga de la Api pokemon')
+        },
+        methods: {
+            getPokemons: function () {
+                 axios.get('https://pokeapi.co/api/v2/pokemon').then(response => {
+                    this.pokemons = response.data.results
+                    console.log (this.pokemons);
+                });
+            }
         }
     }
 </script>
