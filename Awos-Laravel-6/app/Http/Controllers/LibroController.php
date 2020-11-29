@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Libro;
 
- 
 class LibroController extends Controller
 {
     /**
@@ -18,7 +18,7 @@ class LibroController extends Controller
         $libros=Libro::orderBy('id','DESC')->paginate(3);
         return view('Libro.index',compact('libros')); 
     }
- 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +29,7 @@ class LibroController extends Controller
         //
         return view('Libro.create');
     }
- 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -43,7 +43,7 @@ class LibroController extends Controller
         Libro::create($request->all());
         return redirect()->route('libro.index')->with('success','Registro creado satisfactoriamente');
     }
- 
+
     /**
      * Display the specified resource.
      *
@@ -55,7 +55,7 @@ class LibroController extends Controller
         $libros=Libro::find($id);
         return  view('libro.show',compact('libros'));
     }
- 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -68,7 +68,7 @@ class LibroController extends Controller
         $libro=libro::find($id);
         return view('libro.edit',compact('libro'));
     }
- 
+
     /**
      * Update the specified resource in storage.
      *
@@ -79,12 +79,12 @@ class LibroController extends Controller
     public function update(Request $request, $id)    {
         //
         $this->validate($request,[ 'nombre'=>'required', 'resumen'=>'required', 'npagina'=>'required', 'edicion'=>'required', 'autor'=>'required', 'npagina'=>'required', 'precio'=>'required']);
- 
+
         libro::find($id)->update($request->all());
         return redirect()->route('libro.index')->with('success','Registro actualizado satisfactoriamente');
- 
+
     }
- 
+
     /**
      * Remove the specified resource from storage.
      *
